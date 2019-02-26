@@ -123,6 +123,13 @@
 * arguments：nil。
 
 ### Qos
+服务质量保证功能，再非自动确认消息的前提下，如果有一定数目的消息未被确认钱，不得进行新的消费的consume。功能：
+
+    * 限速
+    * 保证消息确认的质量
+
+`注：确认模式必须是非自动ACK的机制，否则Qos不会生效。`也可以基于consume和channel的力度进行设置。
+
     Qos(
         prefetchCount int,
         prefetchSize int,
